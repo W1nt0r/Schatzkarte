@@ -1,0 +1,1 @@
+../../../AppQuestLogbuch/Logbuch Workspace/Logbuch/Logbuch/Logic/SolutionLogger.h
