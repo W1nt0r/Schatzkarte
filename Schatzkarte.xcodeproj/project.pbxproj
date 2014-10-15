@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DFB21B919EEA8C500F9A265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB21B819EEA8C500F9A265 /* AppDelegate.swift */; };
+		3DFB21BB19EEA8C500F9A265 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB21BA19EEA8C500F9A265 /* ViewController.swift */; };
+		3DFB21BE19EEA8C500F9A265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB21BC19EEA8C500F9A265 /* Main.storyboard */; };
+		3DFB21C019EEA8C500F9A265 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB21BF19EEA8C500F9A265 /* Images.xcassets */; };
+		3DFB21C319EEA8C500F9A265 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB21C119EEA8C500F9A265 /* LaunchScreen.xib */; };
+		3DFB21CF19EEA8C600F9A265 /* SchatzkarteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB21CE19EEA8C600F9A265 /* SchatzkarteTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3DFB21C919EEA8C600F9A265 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DFB21AB19EEA8C500F9A265 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DFB21B219EEA8C500F9A265;
+			remoteInfo = Schatzkarte;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3DFB21B319EEA8C500F9A265 /* Schatzkarte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schatzkarte.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFB21B719EEA8C500F9A265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DFB21B819EEA8C500F9A265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DFB21BA19EEA8C500F9A265 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3DFB21BD19EEA8C500F9A265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DFB21BF19EEA8C500F9A265 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3DFB21C219EEA8C500F9A265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		3DFB21C819EEA8C600F9A265 /* SchatzkarteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchatzkarteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFB21CD19EEA8C600F9A265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DFB21CE19EEA8C600F9A265 /* SchatzkarteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchatzkarteTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DFB21B019EEA8C500F9A265 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFB21C519EEA8C500F9A265 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DFB21AA19EEA8C500F9A265 = {
+			isa = PBXGroup;
+			children = (
+				3DFB21B519EEA8C500F9A265 /* Schatzkarte */,
+				3DFB21CB19EEA8C600F9A265 /* SchatzkarteTests */,
+				3DFB21B419EEA8C500F9A265 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DFB21B419EEA8C500F9A265 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DFB21B319EEA8C500F9A265 /* Schatzkarte.app */,
+				3DFB21C819EEA8C600F9A265 /* SchatzkarteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DFB21B519EEA8C500F9A265 /* Schatzkarte */ = {
+			isa = PBXGroup;
+			children = (
+				3DFB21B819EEA8C500F9A265 /* AppDelegate.swift */,
+				3DFB21BA19EEA8C500F9A265 /* ViewController.swift */,
+				3DFB21BC19EEA8C500F9A265 /* Main.storyboard */,
+				3DFB21BF19EEA8C500F9A265 /* Images.xcassets */,
+				3DFB21C119EEA8C500F9A265 /* LaunchScreen.xib */,
+				3DFB21B619EEA8C500F9A265 /* Supporting Files */,
+			);
+			path = Schatzkarte;
+			sourceTree = "<group>";
+		};
+		3DFB21B619EEA8C500F9A265 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DFB21B719EEA8C500F9A265 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3DFB21CB19EEA8C600F9A265 /* SchatzkarteTests */ = {
+			isa = PBXGroup;
+			children = (
+				3DFB21CE19EEA8C600F9A265 /* SchatzkarteTests.swift */,
+				3DFB21CC19EEA8C600F9A265 /* Supporting Files */,
+			);
+			path = SchatzkarteTests;
+			sourceTree = "<group>";
+		};
+		3DFB21CC19EEA8C600F9A265 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DFB21CD19EEA8C600F9A265 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DFB21B219EEA8C500F9A265 /* Schatzkarte */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DFB21D219EEA8C600F9A265 /* Build configuration list for PBXNativeTarget "Schatzkarte" */;
+			buildPhases = (
+				3DFB21AF19EEA8C500F9A265 /* Sources */,
+				3DFB21B019EEA8C500F9A265 /* Frameworks */,
+				3DFB21B119EEA8C500F9A265 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Schatzkarte;
+			productName = Schatzkarte;
+			productReference = 3DFB21B319EEA8C500F9A265 /* Schatzkarte.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3DFB21C719EEA8C500F9A265 /* SchatzkarteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DFB21D519EEA8C600F9A265 /* Build configuration list for PBXNativeTarget "SchatzkarteTests" */;
+			buildPhases = (
+				3DFB21C419EEA8C500F9A265 /* Sources */,
+				3DFB21C519EEA8C500F9A265 /* Frameworks */,
+				3DFB21C619EEA8C500F9A265 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3DFB21CA19EEA8C600F9A265 /* PBXTargetDependency */,
+			);
+			name = SchatzkarteTests;
+			productName = SchatzkarteTests;
+			productReference = 3DFB21C819EEA8C600F9A265 /* SchatzkarteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DFB21AB19EEA8C500F9A265 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = HSR;
+				TargetAttributes = {
+					3DFB21B219EEA8C500F9A265 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					3DFB21C719EEA8C500F9A265 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 3DFB21B219EEA8C500F9A265;
+					};
+				};
+			};
+			buildConfigurationList = 3DFB21AE19EEA8C500F9A265 /* Build configuration list for PBXProject "Schatzkarte" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DFB21AA19EEA8C500F9A265;
+			productRefGroup = 3DFB21B419EEA8C500F9A265 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DFB21B219EEA8C500F9A265 /* Schatzkarte */,
+				3DFB21C719EEA8C500F9A265 /* SchatzkarteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DFB21B119EEA8C500F9A265 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFB21BE19EEA8C500F9A265 /* Main.storyboard in Resources */,
+				3DFB21C319EEA8C500F9A265 /* LaunchScreen.xib in Resources */,
+				3DFB21C019EEA8C500F9A265 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFB21C619EEA8C500F9A265 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DFB21AF19EEA8C500F9A265 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFB21BB19EEA8C500F9A265 /* ViewController.swift in Sources */,
+				3DFB21B919EEA8C500F9A265 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DFB21C419EEA8C500F9A265 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFB21CF19EEA8C600F9A265 /* SchatzkarteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3DFB21CA19EEA8C600F9A265 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DFB21B219EEA8C500F9A265 /* Schatzkarte */;
+			targetProxy = 3DFB21C919EEA8C600F9A265 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3DFB21BC19EEA8C500F9A265 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DFB21BD19EEA8C500F9A265 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3DFB21C119EEA8C500F9A265 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DFB21C219EEA8C500F9A265 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DFB21D019EEA8C600F9A265 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3DFB21D119EEA8C600F9A265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DFB21D319EEA8C600F9A265 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Schatzkarte/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3DFB21D419EEA8C600F9A265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Schatzkarte/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3DFB21D619EEA8C600F9A265 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SchatzkarteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Schatzkarte.app/Schatzkarte";
+			};
+			name = Debug;
+		};
+		3DFB21D719EEA8C600F9A265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SchatzkarteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Schatzkarte.app/Schatzkarte";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DFB21AE19EEA8C500F9A265 /* Build configuration list for PBXProject "Schatzkarte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFB21D019EEA8C600F9A265 /* Debug */,
+				3DFB21D119EEA8C600F9A265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DFB21D219EEA8C600F9A265 /* Build configuration list for PBXNativeTarget "Schatzkarte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFB21D319EEA8C600F9A265 /* Debug */,
+				3DFB21D419EEA8C600F9A265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3DFB21D519EEA8C600F9A265 /* Build configuration list for PBXNativeTarget "SchatzkarteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DFB21D619EEA8C600F9A265 /* Debug */,
+				3DFB21D719EEA8C600F9A265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DFB21AB19EEA8C500F9A265 /* Project object */;
+}
