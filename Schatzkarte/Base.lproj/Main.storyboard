@@ -15,7 +15,36 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P07-1g-r0g">
+                                <rect key="frame" x="252" y="252" width="97" height="97"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="stN-uU-H3W">
+                                        <rect key="frame" x="30" y="30" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.51000000000000001" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="stN-uU-H3W" secondAttribute="bottom" constant="30" id="2jH-Cv-Eth"/>
+                                    <constraint firstAttribute="centerX" secondItem="stN-uU-H3W" secondAttribute="centerX" id="S7c-a1-yvM"/>
+                                    <constraint firstItem="stN-uU-H3W" firstAttribute="leading" secondItem="P07-1g-r0g" secondAttribute="leading" constant="30" id="TMA-WU-F87"/>
+                                    <constraint firstItem="stN-uU-H3W" firstAttribute="top" secondItem="P07-1g-r0g" secondAttribute="top" constant="30" id="c6r-yT-PBf"/>
+                                    <constraint firstAttribute="centerX" secondItem="stN-uU-H3W" secondAttribute="centerX" id="czk-UB-cNY"/>
+                                    <constraint firstAttribute="trailing" secondItem="stN-uU-H3W" secondAttribute="trailing" constant="30" id="zn0-UQ-adS"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="S7c-a1-yvM"/>
+                                        <exclude reference="czk-UB-cNY"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="P07-1g-r0g" secondAttribute="centerY" id="ipv-CY-vr2"/>
+                            <constraint firstAttribute="centerX" secondItem="P07-1g-r0g" secondAttribute="centerX" id="raY-2j-3z0"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="nD1-XS-LLQ">
                         <barButtonItem key="leftBarButtonItem" title="Log Solution" id="C01-SD-OnU">
@@ -29,10 +58,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="markerProgress" destination="stN-uU-H3W" id="Skp-7v-Gug"/>
+                        <outlet property="progressContainer" destination="P07-1g-r0g" id="DTG-ql-z0O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1374.375" y="302.11267605633799"/>
+            <point key="canvasLocation" x="1374" y="302"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a4x-2E-ma6">

@@ -12,29 +12,65 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var map: RMMapView!
     let mapSource: RMTileSource = RMMBTilesSource(tileSetResource: "hsr", ofType: "mbtiles")
+    let hsrCoords: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 47.223252, longitude: 8.817011)
     let app: UIApplication = UIApplication.sharedApplication()
-    var topGuide: UILayoutSupport!
+    //var topGuide: UILayoutSupport!
     var locManager:CLLocationManager!
     var markerIndex: Int!
     var solutionLogger: SolutionLogger!
+    @IBOutlet var markerProgress: UIActivityIndicatorView!
+    @IBOutlet var progressContainer: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.topGuide = self.topLayoutGuide
+        //self.topGuide = self.topLayoutGuide
         
         self.markerIndex = 1
         self.solutionLogger = SolutionLogger(viewController: self)
         
-        self.map = RMMapView(frame: self.view.bounds, andTilesource: self.mapSource)
-        map.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
+        self.initMap()
         self.view.addSubview(map)
         
+        self.initLocationManager()
+        
+        self.initMarkerProgress()
+        
+        //self.createLayout()
+    }
+    
+    func initMap() {
+        self.map = RMMapView(frame: self.view.bounds, andTilesource: self.mapSource)
+        self.map.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth;
+        self.map.minZoom = 15
+        self.map.maxZoom = 20
+        self.map.zoom = 18
+        self.map.setCenterCoordinate(hsrCoords, animated: false)
+    }
+    
+    func initLocationManager() {
         locManager = CLLocationManager()
         locManager.delegate = self
         locManager.desiredAccuracy = kCLLocationAccuracyBest
         //locManager.distanceFilter = 1
-        
-        //self.createLayout()
+    }
+    
+    func initMarkerProgress() {
+        self.markerProgress.hidesWhenStopped = true
+        //self.markerProgress.color = UIColor(red: 194, green: 0, blue: 0, alpha: 1)
+        //self.view.bringSubviewToFront(self.markerProgress)
+        self.progressContainer.hidden = true
+        self.progressContainer.layer.cornerRadius = 10
+        self.view.bringSubviewToFront(self.progressContainer)
+    }
+    
+    func startCustomMProgressAnimation() {
+        self.progressContainer.hidden = false
+        self.markerProgress.startAnimating()
+    }
+    
+    func stopCustomMProgressAnimation() {
+        self.markerProgress.stopAnimating()
+        self.progressContainer.hidden = true
     }
     
     func isLocServicesEnabled() -> Bool {
@@ -94,6 +130,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         println(self.map.annotations)*/
         if self.isLocServicesEnabled()  {
             locManager.startUpdatingLocation()
+            //self.markerProgress.startAnimating()
+            self.startCustomMProgressAnimation()
         } else {
             var alert=UIAlertController(title:"Ortungsdienste einschalten",message:"Bitte die Ortungsdienste einschalten.",preferredStyle:UIAlertControllerStyle.Alert);
             
@@ -145,6 +183,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             userDefaults.setObject(markerToSave, forKey: uKey)
             var success:Bool = userDefaults.synchronize()
+            
+            //self.markerProgress.stopAnimating()
+            self.stopCustomMProgressAnimation()
             
             if !success {
                 var alert=UIAlertController(title:"Speicherfehler",message:"Der Marker konnte leider nicht gespeichert werden.",preferredStyle:UIAlertControllerStyle.Alert);
@@ -199,7 +240,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         /*let viewsDictionary = ["map": self.map, "topGuide": self.topGuide]
         
         let map_constraint_H:NSArray = NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[map]-0-|", options: NSLayoutFormatOptions(0), metrics: nil, views: viewsDictionary)
-        let map_constraint_V:NSArray = NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[topGuide]-0-[map]-0-|", options: NSLayoutFormatOptions.AlignAllLeading, metrics: nil, views: viewsDictionary)
+        let map_constraint_V:NSArray = NSLayoutConstraint.constraintsWithaVisualFormat("V:|-0-[topGuide]-0-[map]-0-|", options: NSLayoutFormatOptions.AlignAllLeading, metrics: nil, views: viewsDictionary)
         
         self.view.addConstraints(map_constraint_H)
         self.view.addConstraints(map_constraint_V)*/
