@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var map: RMMapView!
-    let mapSource: RMTileSource = RMMBTilesSource(tileSetResource: "hsr", ofType: "mbtiles")
+    //let mapSource: RMTileSource = RMMBTilesSource(tileSetResource: "hsr", ofType: "mbtiles")
+    var mapSource: RMTileSource!
     let hsrCoords: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 47.223252, longitude: 8.817011)
     let app: UIApplication = UIApplication.sharedApplication()
     //var topGuide: UILayoutSupport!
@@ -25,6 +26,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         //self.topGuide = self.topLayoutGuide
         
+        self.mapSource = RMMBTilesSource(tileSetResource: "hsr", ofType: "mbtiles")
+        
         self.markerIndex = 1
         self.solutionLogger = SolutionLogger(viewController: self)
         
@@ -34,6 +37,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.initLocationManager()
         
         self.initMarkerProgress()
+        
+        self.loadMarker()
         
         //self.createLayout()
     }
@@ -140,6 +145,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
+    
+    func loadMarker() {
+        if let markerCollection = self.getMarker() {
+            self.markerIndex = self.markerIndex + markerCollection.count
+            
+            for val in markerCollection {
+                let latitude: Double = val["lat"] as Double
+                let longitude: Double = val["lon"] as Double
+                
+                let marker: RMPointAnnotation = RMPointAnnotation(mapView: self.map, coordinate: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), andTitle: "Marker")
+                self.map.addAnnotation(marker)
+            }
+        }
+    }
+    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         //println(locations)
         //println(manager.location.timestamp)
@@ -167,6 +187,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             var uKey:String = "Marker \(self.markerIndex)"
             
             var marker:RMPointAnnotation = RMPointAnnotation(mapView: self.map, coordinate: CLLocationCoordinate2D(latitude: manager.location.coordinate.latitude, longitude: manager.location.coordinate.longitude), andTitle: uKey)
+            marker.mapView = self.map
             self.map.addAnnotation(marker)
             
             println(map.annotations)
@@ -174,8 +195,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             let userDefaults = NSUserDefaults.standardUserDefaults()
             
             var markerToSave : [NSObject : AnyObject] = [
-                "latitude" : manager.location.coordinate.latitude,
-                "longitude" : manager.location.coordinate.longitude
+                "lat" : manager.location.coordinate.latitude,
+                "lon" : manager.location.coordinate.longitude
             ]
             
             println("Lat: \(manager.location.coordinate.latitude)")
@@ -199,27 +220,90 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    @IBAction func logSolution(sender: AnyObject) {
+    //func getMarker() -> Dictionary<String, [NSObject: AnyObject]>? {
+    func getMarker() -> Array<[NSObject: AnyObject]>? {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         var uDDictionary: [NSObject: AnyObject] = userDefaults.dictionaryRepresentation()
-        //println(uDDictionary)
-        //println(uDDictionary.values.array)
-        var markerCollection: [NSObject: AnyObject]!
+        //var markerCollection = Dictionary<String, [NSObject: AnyObject]>()
+        var markerCollection = Array<[NSObject: AnyObject]>()
         
         for (key, value) in uDDictionary {
             var strKey = key as NSString
-            println(strKey)
             
             if startsWith(String(strKey), "Marker") {
+                //markerCollection[String(strKey)] = value as? [NSObject: AnyObject]
+                markerCollection.append(value as [NSObject: AnyObject])
+            }
+        }
+        
+        if markerCollection.isEmpty {
+            return nil
+        } else {
+            return markerCollection
+        }
+    }
+    
+    @IBAction func logSolution(sender: AnyObject) {
+        /*let userDefaults = NSUserDefaults.standardUserDefaults()
+        var uDDictionary: [NSObject: AnyObject] = userDefaults.dictionaryRepresentation()
+        //println(uDDictionary)
+        //println(uDDictionary.values.array)
+        //var markerCollection: [NSObject: AnyObject]!
+        //var markerCollection : [String: [NSObject: AnyObject]]!
+        var markerCollection = Dictionary<String, [NSObject: AnyObject]>()
+        
+        for (key, value) in uDDictionary {
+            var strKey = key as NSString
+            //println(strKey)
+            
+            if startsWith(String(strKey), "Marker") {
+                
+                
                 println(String(strKey))
                 
                 println(value)
-                markerCollection[key] = value as AnyObject
+                markerCollection[String(strKey)] = value as? [NSObject: AnyObject]
                 
             }
         }
         
         println(markerCollection)
+        println(markerCollection.isEmpty)*/
+        
+        if let markerCollection = self.getMarker() {
+            //println(self.parseJSON(markerCollection))
+            //println(self.parseMikrograd(markerCollection))
+            if let solution = self.parseJSON(self.parseMikrograd(markerCollection)) {
+                self.solutionLogger.logSolution("Schatzkarte", taskName: solution)
+                //println(solution)
+            }
+        }
+    }
+    
+    func parseMikrograd(markerColl: Array<[NSObject: AnyObject]>) -> Array<[NSObject: AnyObject]> {
+        var markerCollection = Array<[NSObject: AnyObject]>()
+        
+        for val in markerColl {
+            let latitude: Double = val["lat"] as Double * pow(10, 6)
+            let longitude: Double = val["lon"] as Double * pow(10, 6)
+            
+            let marker: [NSObject: AnyObject] = ["lat": latitude, "lon": longitude]
+            
+            markerCollection.append(marker)
+        }
+        
+        return markerCollection
+    }
+    
+    func parseJSON(obj: AnyObject) -> String? {
+        var err: NSError?
+        let data: NSData! = NSJSONSerialization.dataWithJSONObject(obj,options: NSJSONWritingOptions(0), error: &err)
+        if err != nil {
+            println(err)
+            return nil
+        } else {
+            return NSString(data: data, encoding: NSUTF8StringEncoding)!
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {
