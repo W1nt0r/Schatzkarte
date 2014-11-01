@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D4353F71A0172B200ABDAE8 /* hsr.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 3D4353F61A0172B200ABDAE8 /* hsr.mbtiles */; };
 		3DFB21B919EEA8C500F9A265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB21B819EEA8C500F9A265 /* AppDelegate.swift */; };
 		3DFB21BB19EEA8C500F9A265 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB21BA19EEA8C500F9A265 /* ViewController.swift */; };
 		3DFB21BE19EEA8C500F9A265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB21BC19EEA8C500F9A265 /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		3DFB21C319EEA8C500F9A265 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB21C119EEA8C500F9A265 /* LaunchScreen.xib */; };
 		3DFB21CF19EEA8C600F9A265 /* SchatzkarteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB21CE19EEA8C600F9A265 /* SchatzkarteTests.swift */; };
 		3DFB21DC19EEB66A00F9A265 /* BridgingDummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFB21DB19EEB66A00F9A265 /* BridgingDummy.m */; };
-		3DFB21E419EEB8B700F9A265 /* hsr.mbtiles in Resources */ = {isa = PBXBuildFile; fileRef = 3DFB21E319EEB8B700F9A265 /* hsr.mbtiles */; };
 		F775E6F7C9F406016793F374 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E065E2522C9564BFF06B8BDF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D4353F61A0172B200ABDAE8 /* hsr.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = hsr.mbtiles; sourceTree = "<group>"; };
 		3DFB21B319EEA8C500F9A265 /* Schatzkarte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schatzkarte.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DFB21B719EEA8C500F9A265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3DFB21B819EEA8C500F9A265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		3DFB21CE19EEA8C600F9A265 /* SchatzkarteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchatzkarteTests.swift; sourceTree = "<group>"; };
 		3DFB21DA19EEB66800F9A265 /* Schatzkarte-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Schatzkarte-Bridging-Header.h"; sourceTree = "<group>"; };
 		3DFB21DB19EEB66A00F9A265 /* BridgingDummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BridgingDummy.m; sourceTree = "<group>"; };
-		3DFB21E319EEB8B700F9A265 /* hsr.mbtiles */ = {isa = PBXFileReference; lastKnownFileType = file; path = hsr.mbtiles; sourceTree = "<group>"; };
 		85287290B3B8C6BD376B997F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		97A5BE7DA546C64535071C81 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E065E2522C9564BFF06B8BDF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,7 +147,7 @@
 		3DFB21E219EEB89000F9A265 /* kartendaten */ = {
 			isa = PBXGroup;
 			children = (
-				3DFB21E319EEB8B700F9A265 /* hsr.mbtiles */,
+				3D4353F61A0172B200ABDAE8 /* hsr.mbtiles */,
 			);
 			path = kartendaten;
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 			files = (
 				3DFB21BE19EEA8C500F9A265 /* Main.storyboard in Resources */,
 				3DFB21C319EEA8C500F9A265 /* LaunchScreen.xib in Resources */,
-				3DFB21E419EEB8B700F9A265 /* hsr.mbtiles in Resources */,
+				3D4353F71A0172B200ABDAE8 /* hsr.mbtiles in Resources */,
 				3DFB21C019EEA8C500F9A265 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
